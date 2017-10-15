@@ -7,6 +7,18 @@ function getTodayCalendar(){
 	y.value = todayYear;
 	m.value = todayMonth;
 	document.querySelectorAll(".bg")[todayDay].click();
+	
+	let timeNow = document.querySelector('.timeNow');
+	function time(){
+		let now = new Date();
+		let hour = now.getHours();
+		let min = now.getMinutes();
+		let sec = now.getSeconds();
+		timeNow.innerHTML = '<span class="h">'+hour+'</span>:<span class="m">'+min+'</span>:<span class="s">'+sec+'</span>';
+
+	};
+setInterval(time, 1000);
+
 };
 
 function createCalendar(id, year, month) {
