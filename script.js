@@ -12,8 +12,11 @@ function getTodayCalendar(){
 	function time(){
 		let now = new Date();
 		let hour = now.getHours();
+		if (hour < 10) hour = "0"+hour;
 		let min = now.getMinutes();
+		if (min < 10) min = "0"+min;
 		let sec = now.getSeconds();
+		if (sec < 10) sec = "0"+sec;
 		timeNow.innerHTML = '<span class="h">'+hour+'</span>:<span class="m">'+min+'</span>:<span class="s">'+sec+'</span>';
 
 	};
